@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Implementar autenticación",
+      "description": "Crear sistema de login con JWT",
+      "status": "in_progress",
+      "createdAt": "2024-01-29T10:00:00Z",
+      "updatedAt": "2024-01-29T10:00:00Z",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Diseñar interfaz de usuario",
+      "description": "Crear componentes base y layout principal",
+      "status": "completed",
+      "createdAt": "2024-01-29T11:00:00Z",
+      "updatedAt": "2024-01-29T15:00:00Z",
+      "userId": "1"
+    }
+  ]
+}
