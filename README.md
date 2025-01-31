@@ -20,8 +20,7 @@ Este es un **Sistema de Gestión de Tareas** desarrollado con **Next.js**. La ap
 ### 1️⃣ Clonar el Repositorio
 
 ```bash
-git clone https://github.com/your-repo/task-management.git
-cd task-management
+git clone https://github.com/javaloayza/task-manager-next.git
 ```
 
 ### 2️⃣ Instalar Dependencias
