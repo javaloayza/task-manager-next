@@ -6,7 +6,7 @@ Este es un **Sistema de Gestión de Tareas** desarrollado con **Next.js**. La ap
 
 ## 🚀 Demo en Vivo
 
-👉 [URL de despliegue](https://your-netlify-url.com) *(Reemplazar con la URL de Netlify real)*
+👉 [URL de despliegue](https://task-manager-next-five.vercel.app/) 
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -69,11 +69,6 @@ Contraseña: test123
 ```bash
 npm run test  # o yarn test
 ```
-## 📜 Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT.
-
----
 
 Si tienes alguna duda, abre una discusión o un issue en GitHub. 😊
 
