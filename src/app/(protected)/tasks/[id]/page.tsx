@@ -1,8 +1,8 @@
-// src/app/(protected)/tasks/[id]/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 import { TaskForm } from '@/components/forms/taskForm/taskForm';
 import { useTaskStore } from '@/store/task.store';
 import { Task } from '@/lib/types/task';
@@ -28,6 +28,17 @@ export default function TaskDetailPage({ params }: TaskDetailPageProps) {
     setTask(currentTask);
   }, [params.id, tasks, router]);
 
+  const handleTaskUpdate = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Tarea actualizada',
+      text: 'La tarea se ha editado correctamente',
+      confirmButtonColor: '#2563E8',
+      confirmButtonText: 'Aceptar'
+    });
+    setIsEditing(false);
+  };
+
   if (!task) {
     return <div>Cargando...</div>;
   }
@@ -39,7 +50,8 @@ export default function TaskDetailPage({ params }: TaskDetailPageProps) {
           <h1 className="text-2xl font-bold mb-6">Editar Tarea</h1>
           <TaskForm 
             task={task} 
-            onClose={() => setIsEditing(false)} 
+            onClose={() => setIsEditing(false)}
+            onUpdate={handleTaskUpdate} 
           />
         </div>
       ) : (

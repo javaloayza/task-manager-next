@@ -70,7 +70,7 @@ export class TaskService {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
-    this.tasks.push(newTask);
+    this.tasks.unshift(newTask);
     return newTask;
   }
 

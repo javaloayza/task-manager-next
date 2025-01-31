@@ -14,6 +14,8 @@ describe('TaskStore', () => {
     });
   });
 
+  /* This test case is testing the functionality of adding a task in the TaskStore. Here's a breakdown
+  of what the test is doing: */
   it('should add a task', async () => {
     const { result } = renderHook(() => useTaskStore());
     
@@ -21,10 +23,14 @@ describe('TaskStore', () => {
       await result.current.addTask('Test Task', 'Test Description');
     });
 
-    // Verificamos que se llamó a addTask con los parámetros correctos
     expect(result.current.addTask).toHaveBeenCalledWith('Test Task', 'Test Description');
   });
 
+  /* This test case is setting up a mock task object with specific properties like id, title,
+  description, status, createdAt, updatedAt, and userId. It then sets the state of the TaskStore
+  using `useTaskStore.setState()` with an array containing the mock task, along with loading set to
+  false and error set to null. This is simulating the initial state of the TaskStore with a single
+  task. */
   it('should update a task', async () => {
     const mockTask = {
       id: '1',

@@ -56,11 +56,11 @@ describe('TaskItem', () => {
     jest.spyOn(Swal, 'fire').mockResolvedValueOnce({ isConfirmed: true } as any);
 
     render(<TaskItem task={mockTask} />);
-    const deleteButton = screen.getByText('Eliminar');
+    const deleteButton = screen.getByText('❌');
     fireEvent.click(deleteButton);
 
     expect(Swal.fire).toHaveBeenCalled();
-    await screen.findByText('Eliminado'); // Esperamos a que aparezca el mensaje de éxito
+    await screen.findByText('Eliminado'); 
     expect(mockDeleteTask).toHaveBeenCalledWith(mockTask.id);
 
     jest.restoreAllMocks();

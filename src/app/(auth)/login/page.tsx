@@ -43,7 +43,7 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-          Iniciar Sesión
+          Iniciar Sesión 🔐
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

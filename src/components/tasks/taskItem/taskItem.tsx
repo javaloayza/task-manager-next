@@ -56,8 +56,12 @@ export const TaskItem = ({ task }: TaskItemProps) => {
     if (result.isConfirmed) {
       try {
         await deleteTask(task.id);
-        Swal.fire('Eliminado', 'La tarea ha sido eliminada', 'success');
-      } catch (error) {
+        Swal.fire({
+          title: 'Eliminado',
+          text: 'La tarea ha sido eliminada',
+          icon: 'success',
+          confirmButtonColor: '#2563E8', // Puedes cambiar este color al que prefieras
+        });      } catch (error) {
         console.error('Error deleting task:', error);
         Swal.fire('Error', 'Hubo un error al eliminar la tarea', 'error');
       }
@@ -67,18 +71,18 @@ export const TaskItem = ({ task }: TaskItemProps) => {
   return (
     <Link href={`/tasks/${task.id}`}>
       <div className="p-4 bg-white rounded-lg shadow group hover:shadow-md transition-shadow mt-4">
-        <div className="flex justify-between">
+        <div className="flex justify-between px-1">
           <h3 className="font-semibold">{task.title}</h3>
-          <div className="space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="space-x-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-sm">
             <button
               onClick={handleDelete}
               className="text-red-600 hover:text-red-800"
             >
-              Eliminar
+              ❌
             </button>
           </div>
         </div>
-        <p className="text-gray-600">{task.description}</p>
+        <p className="text-gray-600 pt-2">{task.description}</p>
         <div className="mt-2 flex items-center justify-between">
           <select
             value={task.status}

@@ -45,7 +45,7 @@ export const useTaskStore = create<TaskState>((set, get) => ({
         userId
       );
       set(state => ({ 
-        tasks: [...state.tasks, newTask],
+        tasks: [newTask, ...state.tasks],
         loading: false 
       }));
     } catch (error) {
