@@ -1,5 +1,3 @@
-import { headers } from 'next/headers';
-
 export default function ProtectedLayout({
   children,
 }: {
@@ -11,7 +9,7 @@ export default function ProtectedLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-xl font-semibold">Task Manager</span>
+              <span className="text-xl font-semibold">Sistema de Gestión de Tareas</span>
             </div>
           </div>
         </div>

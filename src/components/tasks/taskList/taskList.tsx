@@ -4,6 +4,13 @@ import { useEffect } from 'react';
 import { useTaskStore } from '@/store/task.store';
 import { TaskItem } from '@/components/tasks/taskItem/taskItem';
 
+/**
+ * The TaskList component renders a list of tasks fetched from a store, displaying loading or error
+ * messages as needed.
+ * @returns The `TaskList` component is returning a list of tasks displayed using the `TaskItem`
+ * component. If the tasks are still loading, it shows a loading message. If there is an error, it
+ * displays an error message with the specific error details.
+ */
 export const TaskList = () => {
   const { tasks, loading, error, fetchTasks } = useTaskStore();
 

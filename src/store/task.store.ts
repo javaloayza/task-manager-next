@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { Task } from '@/lib/types/task';
 import { TaskService } from '@/services/task.service';
 
+/* The `interface TaskState` is defining the structure of the state that will be managed by the
+`useTaskStore` zustand store. It includes the following properties and methods: */
 interface TaskState {
   tasks: Task[];
   loading: boolean;
@@ -17,6 +19,8 @@ export const useTaskStore = create<TaskState>((set, get) => ({
   loading: false,
   error: null,
 
+  /* The `fetchTasks` function in the `useTaskStore` zustand store is responsible for fetching tasks
+  asynchronously. Here's a breakdown of what it does: */
   fetchTasks: async () => {
     try {
       set({ loading: true, error: null });
@@ -29,6 +33,8 @@ export const useTaskStore = create<TaskState>((set, get) => ({
     }
   },
 
+  /* The `addTask` function in the `useTaskStore` zustand store is responsible for adding a new task
+  asynchronously. Here's a breakdown of what it does: */
   addTask: async (title: string, description: string) => {
     try {
       set({ loading: true, error: null });
@@ -47,6 +53,8 @@ export const useTaskStore = create<TaskState>((set, get) => ({
     }
   },
 
+  /* The `updateTask` function in the `useTaskStore` zustand store is responsible for updating a task
+  asynchronously. Here's a breakdown of what it does: */
   updateTask: async (id: string, updates: Partial<Task>) => {
     try {
       set({ loading: true, error: null });
@@ -63,6 +71,8 @@ export const useTaskStore = create<TaskState>((set, get) => ({
     }
   },
 
+  /* The `deleteTask` function in the `useTaskStore` zustand store is responsible for deleting a task
+ asynchronously. Here's a breakdown of what it does: */
   deleteTask: async (id: string) => {
     try {
       set({ loading: true, error: null });

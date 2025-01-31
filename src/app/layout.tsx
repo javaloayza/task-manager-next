@@ -1,26 +1,27 @@
 import '../styles/globals.css';
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { AuthProvider } from '@/components/providers/AuthProvider';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Task Manager',
   description: 'A simple task management application',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true} >
+    <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        {/* <div className="min-h-screen bg-gray-100"> */}
+        <AuthProvider>
           {children}
-        {/* </div> */}
+        </AuthProvider>
       </body>
     </html>
-  )
+  );
 }
